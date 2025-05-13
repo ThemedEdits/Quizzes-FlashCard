@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brainy - Quiz & Flashcards</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="preloader">
+  <div class="preloader-content">
+    <div class="app-icon animate__animated animate__pulse animate__infinite">
+      <i class="fa-solid fa-brain fa-spin-pulse"></i>
+    </div>
+    <p class="loading-text">Loading111111 Brainy...</p>
+    <div class="loading-bar">
+      <div class="loading-progress"></div>
+    </div>
+  </div>
+</div>
+
+    <div class="container">
+        <header>
+            <h1>Brainy</h1>
+            <div class="header-controls">
+                <button id="theme-toggle" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <div class="dropdown">
+                    <button id="topics-dropdown">Topics <i class="fas fa-chevron-down"></i></button>
+                    <div class="dropdown-content">
+                        <a href="#" data-topic="coding">Coding</a>
+                        <a href="#" data-topic="general-knowledge">General Knowledge</a>
+                        <a href="#" data-topic="sports">Sports</a>
+                        <a href="#" data-topic="design">Graphic Design</a>
+                        <a href="#" data-topic="language">Language Learning</a>
+                        <a href="#" data-topic="brands">Company Taglines</a>
+                    </div>
+                </div>
+            </div>
+            
+        </header>
+
+        <main>
+            <div class="mode-selector">
+                <button id="quiz-mode-btn" class="active">Quiz Mode</button>
+                <button id="flashcard-mode-btn">Flashcard Mode</button>
+            </div>
+
+            <!-- Quiz Mode Content -->
+            <div id="quiz-container" class="active">
+                <div class="quiz-header">
+                    <div class="progress-container">
+                        <div class="progress-bar"></div>
+                    </div>
+                    <div class="quiz-info">
+                        <span id="timer">01:00</span>
+                        <span id="question-count">1/10</span>
+                    </div>
+                </div>
+
+                <div class="quiz-content">
+                    <h2 id="quiz-question">What does HTML stand for?</h2>
+                    <div class="options-container">
+                        <button class="option">Hyper Text Markup Language</button>
+                        <button class="option">Hyperlinks and Text Markup Language</button>
+                        <button class="option">Home Tool Markup Language</button>
+                        <button class="option">High Tech Modern Language</button>
+                    </div>
+                </div>
+
+                <div class="quiz-footer">
+                    <button id="next-question" disabled>Next Question</button>
+                </div>
+            </div>
+
+            <!-- Flashcard Mode Content -->
+            <div id="flashcard-container">
+                <div class="flashcard-controls">
+                    <button id="prev-card"><i class="fas fa-arrow-left"></i></button>
+                    <button id="next-card"><i class="fas fa-arrow-right"></i></button>
+                    <button id="shuffle-cards"><i class="fas fa-random"></i> Shuffle</button>
+                    <button id="filter-cards"><i class="fas fa-filter"></i> Filter</button>
+                </div>
+
+                <div class="flashcard">
+                    <div class="flashcard-inner">
+                        <div class="flashcard-front">
+                            <h3>What is the capital of France?</h3>
+                        </div>
+                        <div class="flashcard-back">
+                            <h3>Paris</h3>
+                            <div class="flashcard-actions">
+                                <button class="known-btn"><i class="fas fa-check"></i> Known</button>
+                                <button class="practice-btn"><i class="fas fa-redo"></i> Practice More</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flashcard-progress">
+                    <span id="card-count">1/20</span>
+                </div>
+            </div>
+
+            <!-- Results Screen -->
+            <div id="results-container">
+                <h2>Quiz Results</h2>
+                <div class="score-display">
+                    <span class="score">8</span>/<span class="total">10</span>
+                </div>
+                <div class="result-details">
+                    <div class="correct">
+                        <h3>Correct Answers</h3>
+                        <ul id="correct-answers"></ul>
+                    </div>
+                    <div class="incorrect">
+                        <h3>Incorrect Answers</h3>
+                        <ul id="incorrect-answers"></ul>
+                    </div>
+                </div>
+                <div class="result-actions">
+                    <button id="restart-quiz">Restart Quiz</button>
+                    <button id="share-results"><i class="fas fa-share"></i> Share Results</button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
